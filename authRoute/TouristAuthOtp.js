@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const {tempTouristAuth,TouristAuth} =require('../Schema/TouristAuthSchema');
-const Tourist =require('../Schema/TouristDataSchema');
+const Tourist =require('../Schema/TouristData');
 
-router.route('tourist/signup/alphakey').post( (req,res)=>{
+router.route('/').post( (req,res)=>{
     const TouristSideData=req.body;
     
     tempTouristAuth.findOne({otp:TouristSideData.otp}).then((doc,err)=>{

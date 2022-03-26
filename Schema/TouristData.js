@@ -27,3 +27,4 @@ const TouristSchema=new mongoose.Schema(
 
  
 const Tourist =mongoose.model('Tourist',TouristSchema);
+module.exports=Tourist;

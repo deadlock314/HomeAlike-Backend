@@ -7,6 +7,7 @@ require('dotenv').config();
 
 
 app.use(cors({
+    origin:"http://localhost:3000",
 credentials:true
 }));
 
@@ -31,12 +32,15 @@ mongoose.connect(process.env.DB_URI).then(
 
 const TouristloginRoute=require('./authRoute/TouristlogIn');
 const TouristSignUpRoute=require('./authRoute/TouristSignUp');
-const TouristOtpRoute=require('./authRoute/TouristSignUp/otp');
-
+const TouristOtpRoute=require('./authRoute/TouristAuthOtp');
+const TouristProfile=require("./UserDataRoute/TouristData");
 
 const OwnerloginRoute=require('./authRoute/OwnerlogIn');
 const OwnerSignUpRoute=require('./authRoute/OwnerSignUp');
-const OwnerOtpRoute=require('./authRoute/OwnerSignUp/otp');
+const OwnerOtpRoute=require('./authRoute/OwnerAuthOtp');
+const OwnerProfile=require("./UserDataRoute/OwnerData");
+
+const HomeDataRoute=require("./HomeRoute/HomeDataRoute")
 
 
 app.use('/tourist/login', TouristloginRoute);
@@ -48,5 +52,6 @@ app.use('/owner/login', OwnerloginRoute);
 app.use('/owner/signup',OwnerSignUpRoute);
 app.use('/owner/signup/otp',OwnerOtpRoute);
 
+app.use('/homedata',HomeDataRoute);
 
 

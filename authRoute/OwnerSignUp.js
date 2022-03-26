@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const {tempAuthUser,OwnerAuth} =require('../Schema/OwnerAuthSchema');
+const {OwnerAuth, tempOwnerAuth}=require('../Schema/OwnerAuthSchema');
 const {createMailSender , mailSenderFun}=require('../HelperFunctions/MailSenderFunction');
 
 router.route('/').post((req,res)=>{
 
 const users=req.body;
 
-    const newTempAuthUser= new tempAuthUser({email:users.email,otp:parseInt(Math.random()*999999)});
+    const newTempAuthUser= new tempOwnerAuth({email:users.email,otp:parseInt(Math.random()*999999)});
 
     OwnerAuth.findOne({email:users.email}).then((doc,err)=>{
         if(doc){

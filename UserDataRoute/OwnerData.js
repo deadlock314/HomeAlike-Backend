@@ -1,5 +1,5 @@
 const router = require("express").Router();
-import { Owner } from '../Schema/OwnerDataSchema';
+const Owner = require('../Schema/OwnerDataSchema');
 
 router.route("/").get((req,res)=>{
     const email=req.body.email;

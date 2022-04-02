@@ -35,7 +35,7 @@ const TouristSignUpRoute=require('./authRoute/TouristSignUp');
 const TouristOtpRoute=require('./authRoute/TouristAuthOtp');
 const TouristProfile=require("./UserDataRoute/TouristData");
 
-const OwnerloginRoute=require('./authRoute/OwnerlogIn');
+const OwnerloginRoute=require('./authRoute/OwnerLogin');
 const OwnerSignUpRoute=require('./authRoute/OwnerSignUp');
 const OwnerOtpRoute=require('./authRoute/OwnerAuthOtp');
 const OwnerProfile=require("./UserDataRoute/OwnerData");

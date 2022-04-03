@@ -39,7 +39,7 @@ const tempOwnerAuthSchema= new mongoose.Schema(
         type:Number,
         unique:[true,'duplicate otp']
     },
-    createdAt: { type: Date, expires: '3m', default: Date.now }
+    createdAt: { type: Date, expires: '5m', default: Date.now }
   
     
  } 

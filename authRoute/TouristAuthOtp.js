@@ -10,7 +10,7 @@ router.route('/').post( (req,res)=>{
         if(doc && doc.email==TouristSideData.email){  
 
             const newTouristAuth= new TouristAuth({name:TouristSideData.name,email:TouristSideData.email,password:TouristSideData.paasword});
-            const newTourist= new Tourist({TouristAccData:{name:TouristSideData.name,email:TouristSideData.email},TouristNonImpData:{}});
+            const newTourist= new Tourist({name:TouristSideData.name,email:TouristSideData.email});
 
         bcrypt.hash(TouristSideData.password, 12, function (error, hashPassword){
             if(error){

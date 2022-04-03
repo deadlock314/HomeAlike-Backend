@@ -5,9 +5,13 @@ const cookieParser=require('cookie-parser');
 const app = express();
 require('dotenv').config();
 
-
 app.use(cors({
-    origin:"http://localhost:3000",
+    origin:function (origin, callback) {
+         origins = [http://localhost:3000, "https://home-alike.netlify.app"];
+        database.loadOrigins((error, origins) => {
+            callback(error, origins);
+        });
+    },
 credentials:true
 }));
 

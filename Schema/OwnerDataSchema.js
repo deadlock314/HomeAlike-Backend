@@ -1,22 +1,20 @@
 const mongoose = require("mongoose");
 
 const homeDetailsSchema = new mongoose.Schema({
-  imgArr:{
-    type:Array,
+
+    name: { type: String  ,required:true},
     img:
     {
         data: Buffer,
         contentType: String
     }
- 
-  },
-  name: { type: String },
-  state:{  type:String},
-  city:{  type:String},
+  ,
+  state:{  type:String ,required:true},
+  city:{  type:String,required:true},
   village:{  type:String},
-  pincode: { type: String },
-  landmark: { type: String },
-  facility: { type: String },
+  pincode: { type: String ,required:true},
+  landmark: { type: String,required:true },
+  facility: { type: String ,required:true},
 });
 
 const OwnerSchema = new mongoose.Schema({

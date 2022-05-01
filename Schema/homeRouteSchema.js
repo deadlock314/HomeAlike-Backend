@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-const {homeDetailsSchema}=require("./OwnerDataSchema");
+const {homeDetailsSchema}=require("./HostDataSchema");
 
 const HomeDataSchema= new mongoose.Schema(
 homeDetailsSchema

@@ -31,27 +31,27 @@ mongoose.connect(process.env.DB_URI).then(
                     
    
 
-const TouristloginRoute=require('./authRoute/TouristlogIn');
-const TouristSignUpRoute=require('./authRoute/TouristSignUp');
-const TouristOtpRoute=require('./authRoute/TouristAuthOtp');
-const TouristProfile=require("./UserDataRoute/TouristData");
+const GuestloginRoute=require('./authRoute/GuestlogIn');
+const GuestSignUpRoute=require('./authRoute/GuestSignUp');
+const GuestOtpRoute=require('./authRoute/GuestAuthOtp');
+const GuestProfile=require("./UserDataRoute/HostData");
 
-const OwnerloginRoute=require('./authRoute/OwnerLogin');
-const OwnerSignUpRoute=require('./authRoute/OwnerSignUp');
-const OwnerOtpRoute=require('./authRoute/OwnerAuthOtp');
-const OwnerProfile=require("./UserDataRoute/OwnerData");
+const HostloginRoute=require('./authRoute/HostLogin');
+const HostSignUpRoute=require('./authRoute/HostSignUp');
+const HostOtpRoute=require('./authRoute/HostAuthOtp');
+const HostProfile=require("./UserDataRoute/HostData");
 
 const HomeDataRoute=require("./HomeRoute/HomeDataRoute")
 
 
-app.use('/tourist/login', TouristloginRoute);
-app.use('/tourist/signup',TouristSignUpRoute);
-app.use('/tourist/signup/otp',TouristOtpRoute);
+app.use('/guest/login', GuestloginRoute);
+app.use('/guest/signup',GuestSignUpRoute);
+app.use('/guest/signup/otp',GuestOtpRoute);
 
 
-app.use('/owner/login', OwnerloginRoute);
-app.use('/owner/signup',OwnerSignUpRoute);
-app.use('/owner/signup/otp',OwnerOtpRoute);
+app.use('/host/login', HostloginRoute);
+app.use('/host/signup',HostSignUpRoute);
+app.use('/host/signup/otp',HostOtpRoute);
 
 app.use('/homedata',HomeDataRoute);
 

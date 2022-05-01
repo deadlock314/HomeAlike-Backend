@@ -17,7 +17,7 @@ const homeDetailsSchema = new mongoose.Schema({
   facility: { type: String ,required:true},
 });
 
-const OwnerSchema = new mongoose.Schema({
+const HostSchema = new mongoose.Schema({
   name: {
     type: String,
     unique: true,
@@ -34,6 +34,6 @@ const OwnerSchema = new mongoose.Schema({
     homeDetailsSchema
   },
 });
-const Owner = mongoose.model("Owner", OwnerSchema);
+const Host = mongoose.model("Host", HostSchema);
 
-module.exports = { Owner,homeDetailsSchema };
+module.exports = { Host,homeDetailsSchema };

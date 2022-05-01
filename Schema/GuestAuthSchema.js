@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const TouristAuthSchema=new mongoose.Schema(
+const GuestAuthSchema=new mongoose.Schema(
    {
     
     name:{
@@ -25,7 +25,7 @@ const TouristAuthSchema=new mongoose.Schema(
    
 } 
 );
-const tempTouristAuthSchema= new mongoose.Schema(
+const tempGuestAuthSchema= new mongoose.Schema(
     {
      
     email:{
@@ -45,10 +45,10 @@ const tempTouristAuthSchema= new mongoose.Schema(
  } 
  );
  
-const tempTouristAuth =mongoose.model('tempTouristAuth',tempTouristAuthSchema);
+const tempGuestAuth =mongoose.model('tempGuestAuth',tempGuestAuthSchema);
 
 
  
-const TouristAuth =mongoose.model('TouristAuth',TouristAuthSchema);
+const GuestAuth =mongoose.model('GuestAuth',GuestAuthSchema);
 
-module.exports={TouristAuth,tempTouristAuth};
+module.exports={GuestAuth,tempGuestAuth};

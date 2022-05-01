@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const OwnerAuthSchema=new mongoose.Schema(
+const HostAuthSchema=new mongoose.Schema(
    {
     
     name:{
@@ -25,7 +25,7 @@ const OwnerAuthSchema=new mongoose.Schema(
    
 } 
 );
-const tempOwnerAuthSchema= new mongoose.Schema(
+const tempHostAuthSchema= new mongoose.Schema(
     {
      
     email:{
@@ -45,7 +45,7 @@ const tempOwnerAuthSchema= new mongoose.Schema(
  } 
  );
  
-const tempOwnerAuth =mongoose.model('tempOwnerAuth',tempOwnerAuthSchema);
-const OwnerAuth =mongoose.model('OwnerAuth',OwnerAuthSchema);
+const tempHostAuth =mongoose.model('tempHostAuth',tempHostAuthSchema);
+const HostAuth =mongoose.model('HostAuth',HostAuthSchema);
 
-module.exports={OwnerAuth,tempOwnerAuth};
+module.exports={HostAuth,tempHostAuth};

@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-const { OwnerAuth } = require("../Schema/OwnerAuthSchema");
+const { GuestAuth } = require("../Schema/GuestAuthSchema");
 const jwt = require("jsonwebtoken");
 
 router.route("/").post((req, res) => {
   const logUser = req.body;
 
-  OwnerAuth.findOne({ email: logUser.email })
+  GuestAuth.findOne({ email: logUser.email })
     .then((doc, err) => {
       if (err)
         res.status(400).json({

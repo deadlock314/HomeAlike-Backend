@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-const { TouristAuth } = require("../Schema/TouristAuthSchema");
+const { HostAuth } = require("../Schema/HostAuthSchema");
 const jwt = require("jsonwebtoken");
 
 router.route("/").post((req, res) => {
   const logUser = req.body;
 
-  TouristAuth.findOne({ email: logUser.email })
+  HostAuth.findOne({ email: logUser.email })
     .then((doc, err) => {
       if (err)
         res.status(400).json({

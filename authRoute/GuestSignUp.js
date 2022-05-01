@@ -1,19 +1,19 @@
 const router = require('express').Router();
-const {tempTouristAuth,TouristAuth} =require('../Schema/TouristAuthSchema');
+const {tempGuestAuth,GuestAuth} =require('../Schema/GuestAuthSchema');
 const {createMailSender , mailSenderFun}=require('../HelperFunctions/MailSenderFunction');
 
 router.route('/').post((req,res)=>{
 
 const users=req.body;
 
-    const newtempTouristAuth= new tempTouristAuth({email:users.email,otp:parseInt(Math.random()*999999)});
+    const newtempGuestAuth= new tempGuestAuth({email:users.email,otp:parseInt(Math.random()*999999)});
 
-    TouristAuth.findOne({email:users.email}).then((doc,err)=>{
+    GuestAuth.findOne({email:users.email}).then((doc,err)=>{
         if(doc){
             res.json({isDuplicateUser:true,isEmailSent:false});
         }
         else{
-            newtempTouristAuth.save((error,result)=>{
+            newtempGuestAuth.save((error,result)=>{
                 if(error){
                     res.json({isDuplicateUser:true,isEmailSent:false})
                 }

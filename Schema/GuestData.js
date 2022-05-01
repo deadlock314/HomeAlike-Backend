@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const TouristSchema=new mongoose.Schema(
+const GuestSchema=new mongoose.Schema(
    {
     
     name:{
@@ -26,5 +26,5 @@ const TouristSchema=new mongoose.Schema(
 );
 
  
-const Tourist =mongoose.model('Tourist',TouristSchema);
-module.exports=Tourist;
+const Guest =mongoose.model('Guest',GuestSchema);
+module.exports=Guest;

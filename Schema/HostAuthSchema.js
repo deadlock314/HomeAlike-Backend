@@ -21,7 +21,7 @@ const HostAuthSchema=new mongoose.Schema(
         unique:true,
         required:[true, 'hased password required']
        
-    }
+    },
    
 } 
 );

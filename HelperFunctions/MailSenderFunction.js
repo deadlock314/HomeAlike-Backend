@@ -16,7 +16,7 @@ const nodemailer=require('nodemailer');
             from:'<help.eccentricstore@gmail.com>',
             to:client,
             subject:sub,
-            html:`<h3>Dear ${data.name},</h3>
+            html:`<h4 ${style="color:#50109f;"}>Dear ${data.name},</h4>
             <p>Thank you for Signing up in website <b>HomeAlike</b>. </p>
             <p> please enter following  </p>
              <h3>One Time Password (OTP) : ${data.otp}</h3> 

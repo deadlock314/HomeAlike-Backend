@@ -1,20 +1,15 @@
 const mongoose = require("mongoose");
 
 const homeDetailsSchema = new mongoose.Schema({
-
-    name: { type: String  ,required:true},
-    img:
-    {
-        data: Buffer,
-        contentType: String
-    }
-  ,
-  state:{  type:String ,required:true},
-  city:{  type:String,required:true},
-  village:{  type:String},
-  pincode: { type: String ,required:true},
-  landmark: { type: String,required:true },
-  facility: { type: String ,required:true},
+  name: { type: String, required: true },
+  img: { data: Buffer, contentType: String },
+  state: { type: String, required: true },
+  city: { type: String, required: true },
+  village: { type: String },
+  pincode: { type: String, required: true },
+  landmark: { type: String, required: true },
+  facility: { type: String, required: true },
+  homeId: {type: String}
 });
 
 const HostSchema = new mongoose.Schema({
@@ -36,4 +31,4 @@ const HostSchema = new mongoose.Schema({
 });
 const Host = mongoose.model("Host", HostSchema);
 
-module.exports = { Host,homeDetailsSchema };
+module.exports = { Host, homeDetailsSchema };

@@ -7,7 +7,7 @@ require('dotenv').config();
 
 
 app.use(cors({
-     origin: ["http://localhost:3000", "https://home-alike.netlify.app"]
+     origin: ["http://localhost:3000", "https://home-alike.netlify.app","http://192.168.43.230:3000/"]
     ,
     credentials:true
 }));
